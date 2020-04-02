@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+//   +++++++    Hello mind   +++++++++
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
