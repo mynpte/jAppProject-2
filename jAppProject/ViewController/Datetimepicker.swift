@@ -18,6 +18,7 @@ class Datetimepicker: UIViewController {
 //        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let svc = storyBoard.instantiateViewController(identifier: "createVC") as! createVC
 //         self.view.window?.rootViewController = svc
+
         performSegue(withIdentifier: "sentdatetime", sender: self)
     }
     
@@ -30,6 +31,9 @@ class Datetimepicker: UIViewController {
     }
     
     @IBAction func btncancel(_ sender: Any) {
+        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let svc = storyBoard.instantiateViewController(identifier: "createVC") as! createVC
+        self.view.window?.rootViewController = svc
 //         self.dismiss(animated: true, completion: nil)
 //         navigationController?.popViewController(animated: true)
     }

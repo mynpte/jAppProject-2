@@ -24,6 +24,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var lognInForUser: UILabel!
     
+
+//        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//           let svc = storyBoard.instantiateViewController(identifier: "createVC") as! createVC
+//            self.view.window?.rootViewController = svc
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

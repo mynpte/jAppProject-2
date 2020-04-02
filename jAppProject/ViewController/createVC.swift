@@ -13,7 +13,7 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseStorage
 
-class createVC: UIViewController {
+class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     let db = Firestore.firestore()
     let storage = Storage.storage()
@@ -22,6 +22,8 @@ class createVC: UIViewController {
     let imagePicker = UIImagePickerController()
     var datadate = "DATE"
     var datatime = "TIME"
+    let Gender = ["Female","Male","Male & Female"]
+    var pickerView = UIPickerView()
     
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,6 +32,7 @@ class createVC: UIViewController {
 //            vc.data = lbdate.text!
 //        }
 //    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +45,13 @@ class createVC: UIViewController {
         lbdatetime.text = datadate
         lbdatetime2.text = datatime
         
-        
-    }
+ 
+        pickerView.dataSource = self
+        pickerView.delegate = self
+
+        createpicker()
     
+    }
     
     @IBOutlet weak var imgevent: UIImageView!
     @IBOutlet weak var txttitle: UITextField!
@@ -54,6 +61,46 @@ class createVC: UIViewController {
     
     @IBOutlet weak var lbdatetime: UILabel!
     @IBOutlet weak var lbdatetime2: UILabel!
+    
+    //------------------- Gender ----------------------------------//
+    @IBOutlet weak var txtgender: UITextField!
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Gender.count
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Gender[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        txtgender.text = Gender[row]
+//        txtgender.resignFirstResponder() เลือกเเล้วโชว์เลย
+    }
+    
+    func createpicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let btndone = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(done))
+        toolbar.setItems([btndone], animated: true)
+        
+        txtgender.inputAccessoryView = toolbar
+        txtgender.inputView = pickerView
+        
+        txtgender.textAlignment = .center
+        txtgender.placeholder = "Select Gender"
+    }
+    @objc func done() {
+        txtgender.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    //------------------- Gender ----------------------------------//
+
+    
+    
     
     @IBAction func btnDT(_ sender: Any) {
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,7 +112,7 @@ class createVC: UIViewController {
     
     @IBAction func btncreate(_ sender: Any) {
         self.uploadImage(_image: self.imgevent.image!){ url in
-            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.lbdatetime.text!)", time:"\(self.lbdatetime2.text!)", photo: "\(self.txtphoto.text!)" , ProfileURL: url!){ success in
+            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.lbdatetime.text!)", time:"\(self.lbdatetime2.text!)", gender:"\(self.txtgender.text!)", photo: "\(self.txtphoto.text!)" , ProfileURL: url!){ success in
                        if success != nil{
                            print("yeah yes")
                            
@@ -85,12 +132,13 @@ class createVC: UIViewController {
         self.setupImagePicker()
     }
     
-    func add(title:String, description:String, date:String, time:String, photo:String, ProfileURL:URL, complesion: @escaping(_ url:URL?) ->()){
+    func add(title:String, description:String, date:String, time:String, gender:String, photo:String, ProfileURL:URL, complesion: @escaping(_ url:URL?) ->()){
     self.db.collection("create").document(title).setData([
             "title" : title,
             "description" : description,
             "date": date,
             "time": time,
+            "gender": gender,
             "photo" : "\(title).jpg",
             "profileUrl" : ProfileURL.absoluteString
         

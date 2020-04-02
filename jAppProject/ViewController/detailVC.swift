@@ -64,9 +64,9 @@ class detailVC: UIViewController {
         self.lbdescrip.text = userList[userName[num]]!["description"] as! String
 //        self.lbage.text = userList[userName[num]]!["age"] as! String
 //        self.lblocation.text = userList[userName[num]]!["location"] as! String
-//        self.lbsex.text = userList[userName[num]]!["sex"] as! String
         self.lbdate.text = userList[userName[num]]!["date"] as! String
         self.lbtime.text = userList[userName[num]]!["time"] as! String
+        self.lbsex.text = userList[userName[num]]!["gender"] as! String
         
         
     }
