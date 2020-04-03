@@ -12,7 +12,8 @@ import Firebase
 //   +++++++    Hello mind   +++++++++
 //frankkkk
 // test commit
-// test commit 2 
+// test commit 2
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
