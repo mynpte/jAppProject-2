@@ -9,17 +9,12 @@
 import UIKit
 import Firebase
 
-//new update 04042020
-//new 040402020 13.30
-//test 007
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-// new 040420208888888888888
-// new 040420208888888888888
-    
-// test0011+++
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
