@@ -9,10 +9,7 @@
 import UIKit
 import Firebase
 
-//   +++++++    Hello mind   +++++++++
-//frankkkk
-// test commit
-// test commit 2 
+// upDate 3 04 2020 10.17 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
