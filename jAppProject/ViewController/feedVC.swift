@@ -10,6 +10,7 @@ import UIKit
 
 class feedVC: UICollectionViewCell {
     
+    
     var index: IndexPath?
     
   

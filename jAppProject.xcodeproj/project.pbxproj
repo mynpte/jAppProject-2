@@ -39,9 +39,11 @@
 		01D4A728242CE84B00D19101 /* feedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4A727242CE84B00D19101 /* feedVC.swift */; };
 		01FFAE73242CABE0008CBBA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FFAE72242CABE0008CBBA7 /* HomeViewController.swift */; };
 		66542B3D1E7321F318392523 /* Pods_jAppProject_jAppProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD034A8C0980F1D1A70B6C0 /* Pods_jAppProject_jAppProjectUITests.framework */; };
+		A00C6BEA243C6D680073F0AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00C6BE9243C6D680073F0AF /* MapKit.framework */; };
 		A01D414C2435D7FE009755C5 /* invitation.png in Resources */ = {isa = PBXBuildFile; fileRef = A01D414B2435D7FE009755C5 /* invitation.png */; };
 		A01D414E24364E3B009755C5 /* 73bd49a6d5ca451ece05d1ab56b44643.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A01D414D24364E3B009755C5 /* 73bd49a6d5ca451ece05d1ab56b44643.jpg */; };
-		A074A8C424338EE80094011E /* Datetimepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A074A8C324338EE80094011E /* Datetimepicker.swift */; };
+		A0736B612444A2620097C3DD /* locationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736B602444A2620097C3DD /* locationSearchTable.swift */; };
+		A0736B632444A2CC0097C3DD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736B622444A2CC0097C3DD /* MapViewController.swift */; };
 		DF510751EBF43C89CC31C2D4 /* Pods_jAppProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA3F1AD45D5A48B83139C1D /* Pods_jAppProjectTests.framework */; };
 		FAEC4BFFA5EA1AC9C7FF6806 /* Pods_jAppProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834C096A6E7473E766792F94 /* Pods_jAppProject.framework */; };
 /* End PBXBuildFile section */
@@ -107,9 +109,11 @@
 		6EA3F1AD45D5A48B83139C1D /* Pods_jAppProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jAppProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		796E331733D4542B2647905E /* Pods-jAppProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jAppProjectTests.release.xcconfig"; path = "Target Support Files/Pods-jAppProjectTests/Pods-jAppProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		834C096A6E7473E766792F94 /* Pods_jAppProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jAppProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00C6BE9243C6D680073F0AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A01D414B2435D7FE009755C5 /* invitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invitation.png; sourceTree = "<group>"; };
 		A01D414D24364E3B009755C5 /* 73bd49a6d5ca451ece05d1ab56b44643.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 73bd49a6d5ca451ece05d1ab56b44643.jpg; sourceTree = "<group>"; };
-		A074A8C324338EE80094011E /* Datetimepicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datetimepicker.swift; sourceTree = "<group>"; };
+		A0736B602444A2620097C3DD /* locationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationSearchTable.swift; sourceTree = "<group>"; };
+		A0736B622444A2CC0097C3DD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BFD034A8C0980F1D1A70B6C0 /* Pods_jAppProject_jAppProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jAppProject_jAppProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE85892759E6ABB00523A14 /* Pods-jAppProject-jAppProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jAppProject-jAppProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-jAppProject-jAppProjectUITests/Pods-jAppProject-jAppProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D60B212D9DB1F27C85A682E1 /* Pods-jAppProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jAppProject.release.xcconfig"; path = "Target Support Files/Pods-jAppProject/Pods-jAppProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00C6BEA243C6D680073F0AF /* MapKit.framework in Frameworks */,
 				FAEC4BFFA5EA1AC9C7FF6806 /* Pods_jAppProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +208,8 @@
 				01CDA02524239190007CAD94 /* ViewControlloer+UI */,
 				0120D54C242D462C003069D8 /* Alert */,
 				01CD9FF724236E36007CAD94 /* Main.storyboard */,
+				A0736B622444A2CC0097C3DD /* MapViewController.swift */,
+				A0736B602444A2620097C3DD /* locationSearchTable.swift */,
 				01CD9FFA24236E37007CAD94 /* Assets.xcassets */,
 				01CD9FFC24236E37007CAD94 /* LaunchScreen.storyboard */,
 				01CD9FFF24236E37007CAD94 /* Info.plist */,
@@ -250,7 +257,6 @@
 				01D4A727242CE84B00D19101 /* feedVC.swift */,
 				0120D547242D318E003069D8 /* createVC.swift */,
 				0120D54F242D628B003069D8 /* detailVC.swift */,
-				A074A8C324338EE80094011E /* Datetimepicker.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 		1DB44791379B337A0AF39663 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A00C6BE9243C6D680073F0AF /* MapKit.framework */,
 				834C096A6E7473E766792F94 /* Pods_jAppProject.framework */,
 				BFD034A8C0980F1D1A70B6C0 /* Pods_jAppProject_jAppProjectUITests.framework */,
 				6EA3F1AD45D5A48B83139C1D /* Pods_jAppProjectTests.framework */,
@@ -534,18 +541,19 @@
 				01CDA02A24239A12007CAD94 /* SignInViewController.swift in Sources */,
 				01CDA028242391FB007CAD94 /* SignUpViewController+UI.swift in Sources */,
 				01D4A728242CE84B00D19101 /* feedVC.swift in Sources */,
+				A0736B612444A2620097C3DD /* locationSearchTable.swift in Sources */,
 				01CD9FF624236E35007CAD94 /* ViewController.swift in Sources */,
 				01CD9FF224236E35007CAD94 /* AppDelegate.swift in Sources */,
 				0120D54E242D4662003069D8 /* Alert.swift in Sources */,
 				01CDA02E24239EB0007CAD94 /* ForgotPasswordViewController.swift in Sources */,
 				01CDA022242388CB007CAD94 /* ViewController+UI.swift in Sources */,
 				0120D550242D628B003069D8 /* detailVC.swift in Sources */,
-				A074A8C424338EE80094011E /* Datetimepicker.swift in Sources */,
 				01FFAE73242CABE0008CBBA7 /* HomeViewController.swift in Sources */,
 				01CDA0342423A1A7007CAD94 /* ForforPasswordViewController.swift in Sources */,
 				01CD9FF424236E35007CAD94 /* SceneDelegate.swift in Sources */,
 				0120D548242D318E003069D8 /* createVC.swift in Sources */,
 				01CDA02424238CC9007CAD94 /* SignUpViewController.swift in Sources */,
+				A0736B632444A2CC0097C3DD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

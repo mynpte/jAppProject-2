@@ -20,11 +20,20 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var userList:Dictionary = [String:[String:Any]]()
     var userName:Array = [String]()
     let imagePicker = UIImagePickerController()
-    var datadate = "DATE"
-    var datatime = "TIME"
+    
     let Gender = ["Female","Male","Male & Female"]
+    
     var pickerView = UIPickerView()
     
+    
+/////////////////// btnlocation
+//        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let svc = storyBoard.instantiateViewController(identifier: "navigation") as! UINavigationController
+//        self.view.window?.rootViewController = svc
+//////////////////////////
+
+
+
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "creatVC" {
@@ -42,14 +51,14 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         tapGesture.addTarget(self, action: #selector(createVC.openGallery(tapGesture:)))
         imgevent.isUserInteractionEnabled = true
         imgevent.addGestureRecognizer(tapGesture)
-        lbdatetime.text = datadate
-        lbdatetime2.text = datatime
+
         
- 
         pickerView.dataSource = self
         pickerView.delegate = self
 
         createpicker()
+        createDatePicker()
+        createTimePicker()
     
     }
     
@@ -59,8 +68,67 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var btncreate: UIButton!
     @IBOutlet weak var txtphoto: UITextField!
     
-    @IBOutlet weak var lbdatetime: UILabel!
-    @IBOutlet weak var lbdatetime2: UILabel!
+    
+    //------------------ Date ------------//
+    var pickerDate = UIDatePicker()
+    @IBOutlet weak var txtDate: UITextField!
+    func createDatePicker(){
+        let toolbar1 = UIToolbar()
+        toolbar1.sizeToFit()
+        
+        let doneD = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar1.setItems([doneD], animated: true)
+        
+        txtDate.inputAccessoryView = toolbar1
+        txtDate.inputView = pickerDate
+        pickerDate.datePickerMode = .date
+        txtDate.textAlignment = .center
+        txtDate.placeholder = "Select Date"
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        let dateString = formatter.string(from: pickerDate.date)
+      
+        txtDate.text = "\(dateString)"
+        self.view.endEditing(true)
+    }
+    
+      //------------------ Date ------------//
+    
+    
+    //------------------ Time ------------//
+    @IBOutlet weak var txtTime: UITextField!
+    var PickerTime = UIDatePicker()
+    func createTimePicker(){
+        let toolbar2 = UIToolbar()
+        toolbar2.sizeToFit()
+        
+        let doneT = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donetime))
+        toolbar2.setItems([doneT], animated: true)
+        
+        txtTime.inputAccessoryView = toolbar2
+        txtTime.inputView = PickerTime
+        PickerTime.datePickerMode = .time
+        txtTime.textAlignment = .center
+        txtTime.placeholder = "Select Time"
+    }
+    
+    @objc func donetime(){
+        let formatter = DateFormatter()
+         formatter.dateStyle = .none
+         formatter.timeStyle = .short
+         
+        let timeString = formatter.string(from: PickerTime.date)
+      
+        txtTime.text = "\(timeString)"
+        self.view.endEditing(true)
+    }
+    //------------------ Time ------------//
+    
     
     //------------------- Gender ----------------------------------//
     @IBOutlet weak var txtgender: UITextField!
@@ -77,8 +145,8 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtgender.text = Gender[row]
-//        txtgender.resignFirstResponder() เลือกเเล้วโชว์เลย
     }
+    //        txtgender.resignFirstResponder() เลือกเเล้วโชว์เลย
     
     func createpicker() {
         let toolbar = UIToolbar()
@@ -99,20 +167,10 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     //------------------- Gender ----------------------------------//
 
-    
-    
-    
-    @IBAction func btnDT(_ sender: Any) {
-        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let svc = storyBoard.instantiateViewController(identifier: "datetime") as! Datetimepicker
-         self.view.window?.rootViewController = svc
-        
-        print("...datetime")
-    }
-    
+
     @IBAction func btncreate(_ sender: Any) {
         self.uploadImage(_image: self.imgevent.image!){ url in
-            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.lbdatetime.text!)", time:"\(self.lbdatetime2.text!)", gender:"\(self.txtgender.text!)", photo: "\(self.txtphoto.text!)" , ProfileURL: url!){ success in
+            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.txtDate.text!)", time:"\(self.txtTime.text!)", gender:"\(self.txtgender.text!)", photo: "\(self.txtphoto.text!)" , ProfileURL: url!){ success in
                        if success != nil{
                            print("yeah yes")
                            
@@ -222,8 +280,4 @@ func uploadImage(_image:UIImage, completion: @escaping((_ url:URL?) ->())){
     
 }
 
-extension createVC{
-    func getdatetime(){
-        
-    }
-}
+
