@@ -20,6 +20,7 @@
 		0120D55E242D6EE7003069D8 /* 15376.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0120D557242D6EE7003069D8 /* 15376.jpg */; };
 		0120D560242D7113003069D8 /* 15571.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0120D55F242D7113003069D8 /* 15571.jpg */; };
 		0120D562242D71A3003069D8 /* 3436.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0120D561242D71A2003069D8 /* 3436.jpg */; };
+		0163418C2452498900EBAD1C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0163418B2452498900EBAD1C /* Podfile */; };
 		01CD9FF224236E35007CAD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9FF124236E35007CAD94 /* AppDelegate.swift */; };
 		01CD9FF424236E35007CAD94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9FF324236E35007CAD94 /* SceneDelegate.swift */; };
 		01CD9FF624236E35007CAD94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9FF524236E35007CAD94 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		01CDA0342423A1A7007CAD94 /* ForforPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CDA0332423A1A7007CAD94 /* ForforPasswordViewController.swift */; };
 		01CDA03A2423AD7E007CAD94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01CDA0392423AD7E007CAD94 /* GoogleService-Info.plist */; };
 		01D4A728242CE84B00D19101 /* feedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4A727242CE84B00D19101 /* feedVC.swift */; };
+		01D96921245283C000C2537C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D96920245283C000C2537C /* MapVC.swift */; };
 		01FFAE73242CABE0008CBBA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FFAE72242CABE0008CBBA7 /* HomeViewController.swift */; };
 		66542B3D1E7321F318392523 /* Pods_jAppProject_jAppProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD034A8C0980F1D1A70B6C0 /* Pods_jAppProject_jAppProjectUITests.framework */; };
 		A00C6BEA243C6D680073F0AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00C6BE9243C6D680073F0AF /* MapKit.framework */; };
@@ -79,6 +81,7 @@
 		0120D557242D6EE7003069D8 /* 15376.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15376.jpg; sourceTree = "<group>"; };
 		0120D55F242D7113003069D8 /* 15571.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15571.jpg; sourceTree = "<group>"; };
 		0120D561242D71A2003069D8 /* 3436.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3436.jpg; sourceTree = "<group>"; };
+		0163418B2452498900EBAD1C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		01CD9FEE24236E35007CAD94 /* jAppProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jAppProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD9FF124236E35007CAD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD9FF324236E35007CAD94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		01CDA0332423A1A7007CAD94 /* ForforPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForforPasswordViewController.swift; sourceTree = "<group>"; };
 		01CDA0392423AD7E007CAD94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01D4A727242CE84B00D19101 /* feedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedVC.swift; sourceTree = "<group>"; };
+		01D96920245283C000C2537C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		01FFAE72242CABE0008CBBA7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3EAFDC1C523EEAE0AD8C8D81 /* Pods-jAppProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jAppProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-jAppProjectTests/Pods-jAppProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42A38D779B4E711745EE28C6 /* Pods-jAppProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jAppProject.debug.xcconfig"; path = "Target Support Files/Pods-jAppProject/Pods-jAppProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +179,15 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		01BF10382452137900EF776D /* Mapkit */ = {
+			isa = PBXGroup;
+			children = (
+				A0736B622444A2CC0097C3DD /* MapViewController.swift */,
+				A0736B602444A2620097C3DD /* locationSearchTable.swift */,
+			);
+			path = Mapkit;
+			sourceTree = "<group>";
+		};
 		01CD9FE524236E35007CAD94 = {
 			isa = PBXGroup;
 			children = (
@@ -205,11 +218,11 @@
 				01CD9FF124236E35007CAD94 /* AppDelegate.swift */,
 				01CD9FF324236E35007CAD94 /* SceneDelegate.swift */,
 				01CDA026242391B3007CAD94 /* ViewController */,
+				01BF10382452137900EF776D /* Mapkit */,
 				01CDA02524239190007CAD94 /* ViewControlloer+UI */,
 				0120D54C242D462C003069D8 /* Alert */,
 				01CD9FF724236E36007CAD94 /* Main.storyboard */,
-				A0736B622444A2CC0097C3DD /* MapViewController.swift */,
-				A0736B602444A2620097C3DD /* locationSearchTable.swift */,
+				01D96920245283C000C2537C /* MapVC.swift */,
 				01CD9FFA24236E37007CAD94 /* Assets.xcassets */,
 				01CD9FFC24236E37007CAD94 /* LaunchScreen.storyboard */,
 				01CD9FFF24236E37007CAD94 /* Info.plist */,
@@ -264,6 +277,7 @@
 		1DB44791379B337A0AF39663 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0163418B2452498900EBAD1C /* Podfile */,
 				A00C6BE9243C6D680073F0AF /* MapKit.framework */,
 				834C096A6E7473E766792F94 /* Pods_jAppProject.framework */,
 				BFD034A8C0980F1D1A70B6C0 /* Pods_jAppProject_jAppProjectUITests.framework */,
@@ -394,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0163418C2452498900EBAD1C /* Podfile in Resources */,
 				0120D55D242D6EE7003069D8 /* 13588.jpg in Resources */,
 				01CD9FFE24236E37007CAD94 /* LaunchScreen.storyboard in Resources */,
 				0120D54B242D3302003069D8 /* picture.png in Resources */,
@@ -544,6 +559,7 @@
 				A0736B612444A2620097C3DD /* locationSearchTable.swift in Sources */,
 				01CD9FF624236E35007CAD94 /* ViewController.swift in Sources */,
 				01CD9FF224236E35007CAD94 /* AppDelegate.swift in Sources */,
+				01D96921245283C000C2537C /* MapVC.swift in Sources */,
 				0120D54E242D4662003069D8 /* Alert.swift in Sources */,
 				01CDA02E24239EB0007CAD94 /* ForgotPasswordViewController.swift in Sources */,
 				01CDA022242388CB007CAD94 /* ViewController+UI.swift in Sources */,

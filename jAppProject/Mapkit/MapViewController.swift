@@ -33,24 +33,48 @@ class MapViewController: UIViewController {
                 resultSearchController?.searchResultsUpdater = locationSearchTable
                 
                 //ช่องเสริช
-                let searchBar = resultSearchController!.searchBar
+            var searchBar = resultSearchController!.searchBar
                 searchBar.sizeToFit()
                 searchBar.placeholder = "Search for places"
+                
+        
                 navigationItem.titleView = resultSearchController?.searchBar
+        
                 resultSearchController?.hidesNavigationBarDuringPresentation = false
                 resultSearchController?.dimsBackgroundDuringPresentation = true
                 definesPresentationContext = true
                 locationSearchTable.mapView = mapView
+                
+        
                 //เรียกใช้ปักมุด
                 locationSearchTable.handleMapSearchDelegate = self
                 //navigation button
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
                 self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancle))
     }
+    var local = ""
     
     @objc func handleDone(){
         print("Done")
+    
+        let storyBord: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mvc = self.storyboard?.instantiateViewController(identifier: "createVC") as! createVC
+        mvc.local = local
+//        self.local = "\(String(describing: selectedPin!))"
+        print("local :",local)
+        self.view.window?.rootViewController = mvc
+        
     }
+//    @IBAction func btnsubmit(_ sender: Any) {
+//
+//        let storyBord: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mvc = self.storyboard?.instantiateViewController(identifier: "createVC") as! createVC
+//        mvc.local = local
+//        self.view.window?.rootViewController = mvc
+//    }
+    
+   
+    
     @objc func handleCancle(){
         self.dismiss(animated: true, completion: nil)
     }
@@ -120,11 +144,19 @@ extension MapViewController: HandleMapSearch {
         let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
 //            annotation.subtitle = "\(city) \(state)"
-
+            print("แสดง state :", state)
+            print("แสดง city :", city)
         }
+        print("แสดง-selectedPin :",selectedPin!.name)
+        print("แสดง-selectedPin-2 :",selectedPin!)
+        self.local = "\(selectedPin!.name!)"
+        
+        
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05,longitudeDelta: 0.05)
+        print("แสดง span :",span)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
+        print("แสดง region :",region)  //ละจิจูด และ ลองจิจูด
         mapView.setRegion(region, animated: true)
     }
 }

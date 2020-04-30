@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseStorage
+import ProgressHUD
 
 class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -26,6 +27,7 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var pickerView = UIPickerView()
     
     
+    var local = ""
 /////////////////// btnlocation
 //        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let svc = storyBoard.instantiateViewController(identifier: "navigation") as! UINavigationController
@@ -59,7 +61,10 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         createpicker()
         createDatePicker()
         createTimePicker()
-    
+        local = "\(local)"
+        lblocation.text = "Select you location"
+        lblocation.text = local
+        txtlocation.text = local
     }
     
     @IBOutlet weak var imgevent: UIImageView!
@@ -67,6 +72,12 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var txtdescription: UITextField!
     @IBOutlet weak var btncreate: UIButton!
     @IBOutlet weak var txtphoto: UITextField!
+    
+    @IBOutlet weak var txtlocation: UITextField!
+    
+    
+    @IBOutlet weak var lblocation: UILabel!
+    
     
     
     //------------------ Date ------------//
@@ -169,12 +180,15 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
 
     @IBAction func btncreate(_ sender: Any) {
+    
         self.uploadImage(_image: self.imgevent.image!){ url in
-            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.txtDate.text!)", time:"\(self.txtTime.text!)", gender:"\(self.txtgender.text!)", photo: "\(self.txtphoto.text!)" , ProfileURL: url!){ success in
+            self.add(title: "\(self.txttitle.text!)", description:"\(self.txtdescription.text!)", date:"\(self.txtDate.text!)", time:"\(self.txtTime.text!)", gender:"\(self.txtgender.text!)", photo: "\(self.txtphoto.text!)" ,location: "\(self.lblocation.text!)", ProfileURL: url!){ success in
                        if success != nil{
                            print("yeah yes")
                            
-                       }
+                       }else {
+                        print("try again")
+                }
                        
                    }
            
@@ -190,7 +204,7 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.setupImagePicker()
     }
     
-    func add(title:String, description:String, date:String, time:String, gender:String, photo:String, ProfileURL:URL, complesion: @escaping(_ url:URL?) ->()){
+    func add(title:String, description:String, date:String, time:String, gender:String, photo:String, location:String, ProfileURL:URL, complesion: @escaping(_ url:URL?) ->()){
     self.db.collection("create").document(title).setData([
             "title" : title,
             "description" : description,
@@ -198,6 +212,7 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             "time": time,
             "gender": gender,
             "photo" : "\(title).jpg",
+            "location" : location,
             "profileUrl" : ProfileURL.absoluteString
         
         ]){ err in
@@ -225,11 +240,12 @@ class createVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
                self.userList[name] = data
                self.userName.append(name)
+           
            }
 
            print("success leaw jaaaaa")
-           }
-
+       } 
+        
        }
         
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
