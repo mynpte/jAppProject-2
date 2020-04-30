@@ -57,6 +57,9 @@ extension locationSearchTable {
         let selectedItem = matchingItems[indexPath.row].placemark
         cell.textLabel?.text = selectedItem.name
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
+        print("แสดงชื่อสถานที่", selectedItem)
+        print("ละจิจูด",selectedItem.location)
+        print("แสดงชื่อสถานที่-2", selectedItem.name!)
         return cell
     }
     
@@ -74,6 +77,8 @@ extension locationSearchTable : UISearchResultsUpdating {
             let searchBarText = searchController.searchBar.text else {return}
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchBarText
+        
+        
         request.region = mapView.region
         
         let search = MKLocalSearch(request: request)

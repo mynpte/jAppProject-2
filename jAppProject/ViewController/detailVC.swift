@@ -45,6 +45,12 @@ class detailVC: UIViewController {
             self.view.window?.rootViewController = vc
 //        navigationController?.popViewController(animated: true)
     }
+    @IBAction func gotocreate(_ sender: Any) {
+        let storyBord: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mvc = self.storyboard?.instantiateViewController(identifier: "createVC") as! createVC
+        
+        self.view.window?.rootViewController = mvc
+    }
     
     
     func showData() {
