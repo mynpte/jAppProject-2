@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a4b-vh-fyc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7fw-5e-fQr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -95,6 +95,12 @@
                                     <segue destination="Kka-yM-0Bk" kind="show" id="Smj-1X-jB4"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="textphoto" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yjd-kV-pvc">
+                                <rect key="frame" x="164" y="127" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Upk-xz-fLl"/>
@@ -111,6 +117,8 @@
                         <outlet property="txtemil" destination="x5g-hw-LEh" id="Asq-fW-y5O"/>
                         <outlet property="txtfullname" destination="unJ-n7-QeG" id="zxI-dR-FvQ"/>
                         <outlet property="txtpassword" destination="Kl8-4L-uGm" id="Y1k-Bw-KVT"/>
+                        <outlet property="txtphoto" destination="yjd-kV-pvc" id="aIh-47-Cex"/>
+                        <outlet property="view" destination="E8v-ZD-rmo" id="9fM-rT-Pte"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcL-EA-mW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,6 +235,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LAB-AN-El3">
+                                <rect key="frame" x="33" y="50.5" width="55" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l1Y-3a-WZE"/>
@@ -234,6 +247,7 @@
                     <navigationItem key="navigationItem" id="bWI-5W-oKU"/>
                     <connections>
                         <outlet property="feedVC" destination="7aj-gQ-lcn" id="x8j-T5-SXK"/>
+                        <outlet property="imgProfile" destination="LAB-AN-El3" id="xG6-Sx-ho9"/>
                         <outlet property="lognInForUser" destination="7Xw-2I-C8f" id="hmz-9L-YYk"/>
                     </connections>
                 </viewController>
@@ -924,6 +938,7 @@
         <image name="3436.jpg" width="800" height="450"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
         <image name="close" width="64" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
         <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
         <image name="picture.png" width="384" height="384"/>
     </resources>

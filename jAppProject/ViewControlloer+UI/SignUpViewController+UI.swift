@@ -129,38 +129,21 @@ extension SignUpViewController {
         }
     }
     
-    func readData(){
-        db.collection("commu2").getDocuments { (DocumentSnapshot, Error) in
-
-        if Error == nil && DocumentSnapshot != nil {
-
-            for document in DocumentSnapshot!.documents {
-
-                let data = document.data()
-                let name = data["fullname"] as! String
-                    
-                self.userList[name] = data
-                self.userName.append(name)
-                                        
-                }
-            }
-        }
-    }
 }
 
 //รูปภาพ
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            image = imageSelected
-            avatar.image = imageSelected
-        }
-        
-        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            image = imageOriginal
-            avatar.image = imageOriginal
-        }
- 
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
+//extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+//            image = imageSelected
+//            avatar.image = imageSelected
+//        }
+//
+//        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            image = imageOriginal
+//            avatar.image = imageOriginal
+//        }
+//
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//}
